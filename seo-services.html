@@ -99,6 +99,40 @@
             --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
         }
 
+        /* TECHNICAL HUD BADGE */
+        @keyframes scanLine {
+            0% { top: 0%; opacity: 0; }
+            50% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        @keyframes hudPulse {
+            0%, 100% { background: rgba(50, 108, 242, 0.05); border-color: rgba(50, 108, 242, 0.2); }
+            50% { background: rgba(50, 108, 242, 0.12); border-color: rgba(50, 108, 242, 0.5); }
+        }
+        .hud-badge {
+            animation: hudPulse 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+        .hud-badge:hover {
+            transform: translateY(-3px) scale(1.02);
+            background: rgba(50, 108, 242, 0.15) !important;
+            box-shadow: 0 0 30px rgba(50, 108, 242, 0.3) !important;
+        }
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--accent-blue);
+            box-shadow: 0 0 8px var(--accent-blue);
+            animation: scanLine 2.5s linear infinite;
+            pointer-events: none;
+        }
+
+
         /* Reset & Base */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; cursor: none; }
         html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; background: var(--bg-deep); }
@@ -242,6 +276,21 @@
                 Dominate <span class="text-gradient">Dubai Search</span> Rankings
             </h1>
             <p class="reveal stagger-2">Stop renting traffic. We attract high-intent customers in Dubai through authority-driven search strategies that permanently seize top positions and drive sustainable revenue across the Emirates.</p>
+
+            <div class="promo-callout reveal delay-4" style="margin-bottom: 35px; display: inline-flex; align-items: center;">
+                <div class="hud-badge" style="background: rgba(50, 108, 242, 0.05); border: 1px solid rgba(50, 108, 242, 0.2); padding: 12px 35px; clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%); display: flex; align-items: center; gap: 15px; box-shadow: inset 0 0 20px rgba(50, 108, 242, 0.1); cursor: pointer;">
+                    <div class="scan-line"></div>
+                    <div style="position: absolute; top: 0; left: 0; width: 10px; height: 10px; border-left: 2px solid var(--accent-blue); border-top: 2px solid var(--accent-blue);"></div>
+                    <div style="position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; border-right: 2px solid var(--accent-blue); border-bottom: 2px solid var(--accent-blue);"></div>
+                    <span style="color: var(--accent-blue); font-family: var(--font-heading); font-size: 1.8rem; letter-spacing: 2px; text-shadow: 0 0 10px rgba(50, 108, 242, 0.3); line-height: 1;">40% OFF*</span>
+                    <div style="width: 1px; height: 24px; background: rgba(255,255,255,0.1);"></div>
+                    <div style="display: flex; flex-direction: column; text-align: left;">
+                        <span style="font-family: var(--font-heading); font-size: 0.75rem; color: var(--accent-blue); letter-spacing: 1.5px; line-height: 1.2;">CAMPAIGN_INIT</span>
+                        <span style="font-family: var(--font-body); font-size: 0.6rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px;">Seasonal Access</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="reveal stagger-3">
                 <a href="index.html#contact" class="btn btn-primary">Attract More Customers →</a>
             </div>

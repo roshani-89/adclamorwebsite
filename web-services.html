@@ -231,6 +231,40 @@
         .price-desc { font-size: 0.9rem; color: var(--accent-blue); font-weight: 700; display: flex; align-items: center; gap: 8px; }
         .price-desc::before { content: ''; display: inline-block; width: 6px; height: 6px; background: var(--accent-blue); border-radius: 50%; box-shadow: 0 0 10px var(--accent-blue); }
 
+        /* TECHNICAL HUD BADGE */
+        @keyframes scanLine {
+            0% { top: 0%; opacity: 0; }
+            50% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        @keyframes hudPulse {
+            0%, 100% { background: rgba(50, 108, 242, 0.05); border-color: rgba(50, 108, 242, 0.2); }
+            50% { background: rgba(50, 108, 242, 0.12); border-color: rgba(50, 108, 242, 0.5); }
+        }
+        .hud-badge {
+            animation: hudPulse 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s var(--ease-expo);
+        }
+        .hud-badge:hover {
+            transform: translateY(-3px) scale(1.02);
+            background: rgba(50, 108, 242, 0.15) !important;
+            box-shadow: 0 0 30px rgba(50, 108, 242, 0.3) !important;
+        }
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--accent-blue);
+            box-shadow: 0 0 8px var(--accent-blue);
+            animation: scanLine 2.5s linear infinite;
+            pointer-events: none;
+        }
+
+
         @media (max-width: 768px) {
             .pricing-badge { padding: 15px 20px; margin: 25px 0; width: 100%; align-items: center; text-align: center; }
             .price-value { font-size: 2rem; }
@@ -2523,10 +2557,19 @@
                 <span class="hero-tag">Hospitality SEO</span>
             </div>
 
-            <div class="pricing-badge reveal stagger-2">
-                <span class="price-label">Limited-time Offer</span>
-                <div class="price-value">899 AED</div>
-                <div class="price-desc">Professional Website + SEO Package</div>
+
+            <div class="promo-callout reveal delay-4" style="margin-bottom: 35px; display: inline-flex; align-items: center;">
+                <div class="hud-badge" style="background: rgba(50, 108, 242, 0.05); border: 1px solid rgba(50, 108, 242, 0.2); padding: 12px 35px; clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%); display: flex; align-items: center; gap: 15px; box-shadow: inset 0 0 20px rgba(50, 108, 242, 0.1); cursor: pointer;">
+                    <div class="scan-line"></div>
+                    <div style="position: absolute; top: 0; left: 0; width: 10px; height: 10px; border-left: 2px solid var(--accent-blue); border-top: 2px solid var(--accent-blue);"></div>
+                    <div style="position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; border-right: 2px solid var(--accent-blue); border-bottom: 2px solid var(--accent-blue);"></div>
+                    <span style="color: var(--accent-blue); font-family: var(--font-heading); font-size: 1.8rem; letter-spacing: 2px; text-shadow: 0 0 10px rgba(50, 108, 242, 0.3); line-height: 1;">40% OFF*</span>
+                    <div style="width: 1px; height: 24px; background: rgba(255,255,255,0.1);"></div>
+                    <div style="display: flex; flex-direction: column; text-align: left;">
+                        <span style="font-family: var(--font-heading); font-size: 0.75rem; color: var(--accent-blue); letter-spacing: 1.5px; line-height: 1.2;">CAMPAIGN_INIT</span>
+                        <span style="font-family: var(--font-body); font-size: 0.6rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px;">Seasonal Access</span>
+                    </div>
+                </div>
             </div>
 
             <div class="hero-buttons reveal stagger-3">
@@ -3221,7 +3264,7 @@
                                 </label>
                                 <div class="input-wrap" style="margin-top: 15px;">
                                     <input type="text" id="wizardBudgetInput" class="form-control" 
-                                        placeholder="Enter your budget range in AED (e.g. 1500 AED)" 
+                                        placeholder="Enter your budget range in AED or INR (e.g. 1500 AED / 35,000 INR)" 
                                         oninput="wizardData.budget = this.value"
                                         style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 16px 24px; border-radius: 16px; width: 100%; font-family: var(--font-body);">
                                 </div>

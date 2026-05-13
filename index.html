@@ -201,6 +201,40 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
         }
 
+        /* TECHNICAL HUD BADGE */
+        @keyframes scanLine {
+            0% { top: 0%; opacity: 0; }
+            50% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        @keyframes hudPulse {
+            0%, 100% { background: rgba(26, 108, 245, 0.05); border-color: rgba(26, 108, 245, 0.2); }
+            50% { background: rgba(26, 108, 245, 0.12); border-color: rgba(26, 108, 245, 0.5); }
+        }
+        .hud-badge {
+            animation: hudPulse 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s var(--ease-expo);
+        }
+        .hud-badge:hover {
+            transform: translateY(-3px) scale(1.02);
+            background: rgba(26, 108, 245, 0.15) !important;
+            box-shadow: 0 0 30px rgba(26, 108, 245, 0.3) !important;
+        }
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--blue-bright);
+            box-shadow: 0 0 8px var(--blue-bright);
+            animation: scanLine 2.5s linear infinite;
+            pointer-events: none;
+        }
+
+
         /* NAV */
         nav {
             position: fixed;
@@ -2403,6 +2437,21 @@
             <p class="hero-desc-cinematic">
                 We design and engineer high-performance ecosystems that scale revenue, dominate organic search, and position brands as market authorities.
             </p>
+
+            <div class="promo-callout reveal delay-4" style="margin-bottom: 35px; display: inline-flex; align-items: center;">
+                <div class="hud-badge" style="background: rgba(26, 108, 245, 0.05); border: 1px solid rgba(26, 108, 245, 0.2); padding: 12px 35px; clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%); display: flex; align-items: center; gap: 15px; box-shadow: inset 0 0 20px rgba(26, 108, 245, 0.1); cursor: pointer;">
+                    <div class="scan-line"></div>
+                    <div style="position: absolute; top: 0; left: 0; width: 10px; height: 10px; border-left: 2px solid var(--blue); border-top: 2px solid var(--blue);"></div>
+                    <div style="position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; border-right: 2px solid var(--blue); border-bottom: 2px solid var(--blue);"></div>
+                    <span style="color: var(--blue-bright); font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 2px; text-shadow: 0 0 10px var(--blue-glow); line-height: 1;">40% OFF*</span>
+                    <div style="width: 1px; height: 24px; background: rgba(255,255,255,0.1);"></div>
+                    <div style="display: flex; flex-direction: column; text-align: left;">
+                        <span style="font-family: var(--font-display); font-size: 0.75rem; color: var(--blue-bright); letter-spacing: 1.5px; line-height: 1.2;">CAMPAIGN_INIT</span>
+                        <span style="font-family: var(--font-body); font-size: 0.6rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px;">Seasonal Access</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="hero-btns-cinematic">
                 <a href="#contact" class="btn-cinematic filled magnetic">The Protocol →</a>
                 <a href="#services" class="btn-cinematic magnetic">Our Arsenal</a>
@@ -2979,10 +3028,10 @@
                                     </select>
                                     <select class="inp" id="fRevenue">
                                         <option value="">Revenue range (optional)…</option>
-                                        <option>Under ₹2L/mo</option>
-                                        <option>₹2L–₹10L/mo</option>
-                                        <option>₹10L–₹50L/mo</option>
-                                        <option>₹50L+/mo</option>
+                                        <option>Under ₹2L (90 AED) /mo</option>
+                                        <option>₹2L–₹10L (90–440 AED) /mo</option>
+                                        <option>₹10L–₹50L (440–2200 AED) /mo</option>
+                                        <option>₹50L+ (2200+ AED) /mo</option>
                                     </select>
                                 </div>
                             </div>
@@ -3010,7 +3059,7 @@
                                 <textarea class="inp" id="fChallenge" rows="4"
                                     placeholder="What's holding your growth back right now?" required></textarea>
                                 <input class="inp" type="text" id="fBudget"
-                                    placeholder="Monthly marketing budget (e.g. 5000 AED)" required>
+                                    placeholder="Monthly marketing budget (e.g. 5000 AED / 1.1L INR)" required>
                             </div>
 
                             <div class="form-nav">
