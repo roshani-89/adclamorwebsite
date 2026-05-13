@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SCKBSVB1JW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-SCKBSVB1JW');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dispatch — Insights from AdClamor Digital</title>
+    <link rel="icon" type="image/png" href="admin/logo.png">
+    <link rel="shortcut icon" href="admin/logo.png">
+    <link rel="apple-touch-icon" href="admin/logo.png">
+    <meta name="description"
+        content="Read the latest insights on SEO, web development, and social media marketing from AdClamor, an elite data-driven digital architecture firm.">
+    <link rel="canonical" href="https://adclamordigital.com/blog.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adclamordigital.com/blog.html">
+    <meta property="og:title" content="AdClamor Dispatch — Digital Marketing Insights & Strategy">
+    <meta property="og:description" content="Advanced insights on SEO, conversion architecture, and market-dominating digital strategies.">
+    <meta property="og:image" content="https://adclamordigital.com/admin/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://adclamordigital.com/blog.html">
+    <meta property="twitter:title" content="AdClamor Dispatch — Digital Marketing Insights & Strategy">
+    <meta property="twitter:description" content="Advanced insights on SEO, conversion architecture, and market-dominating digital strategies.">
+    <meta property="twitter:image" content="https://adclamordigital.com/admin/logo.png">
+
+    <!-- Schema.org JSON-LD (Breadcrumbs) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://adclamordigital.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://adclamordigital.com/blog.html"
+      }]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Outfit:wght@100..900&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ===========================
+           DESIGN SYSTEM (TOKENS)
+        =========================== */
+        :root {
+            --bg-deep: #03050a;
+            --bg-card: rgba(13, 17, 28, 0.7);
+            --bg-card-hover: rgba(20, 26, 42, 0.9);
+            --accent-blue: #326CF2;
+            --accent-blue-glow: rgba(50, 108, 242, 0.4);
+            --accent-emerald: #10B981;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --text-dim: #64748B;
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-glow: rgba(50, 108, 242, 0.2);
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        /* Base Reset */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; cursor: none; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; background: var(--bg-deep); }
+        body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-main); overflow-x: hidden; line-height: 1.6; }
+        
+        .noise-overlay { position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); } @media (max-width: 768px) { .noise-overlay { display: none; } }
+        #cursor-follower { position: fixed; width: 32px; height: 32px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50%; pointer-events: none; z-index: 10000; transition: width 0.3s, height 0.3s, background 0.3s, border 0.3s; transform: translate(-50%, -50%); backdrop-filter: blur(2px); }
+        #cursor-dot { position: fixed; width: 4px; height: 4px; background: #fff; border-radius: 50%; pointer-events: none; z-index: 10001; transform: translate(-50%, -50%); }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 4%; }
+        section { padding: 120px 0; position: relative; }
+
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 32px; border-radius: 100px; font-family: var(--font-heading); font-weight: 600; text-decoration: none; transition: all 0.4s var(--ease-out-expo); border: none; cursor: none; }
+        .btn-primary { background: var(--accent-blue); color: white; box-shadow: 0 10px 30px var(--accent-blue-glow); }
+        .btn-primary:hover { transform: translateY(-4px); filter: brightness(1.1); }
+
+        .heading-xl { font-family: var(--font-heading); font-size: clamp(3rem, 10vw, 7rem); line-height: 0.95; letter-spacing: -0.04em; font-weight: 800; margin-bottom: 30px; }
+        .text-gradient { background: linear-gradient(135deg, #fff 30%, var(--accent-blue) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Navbar Styling */
+        nav { position: fixed; top: 24px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 1200px; height: 75px; background: rgba(3, 5, 10, 0.5); backdrop-filter: blur(20px); border: 1px solid var(--border-subtle); border-radius: 100px; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 30px; transition: all 0.4s var(--ease-out-expo); }
+        nav.scrolled { top: 10px; height: 60px; background: rgba(3, 5, 10, 0.85); border-color: var(--border-glow); }
+        .logo { text-decoration: none; color: #fff; font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; }
+        .logo span { color: var(--accent-blue); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #fff; }
+
+        /* Blog Hero */
+        .blog-hero { text-align: center; padding-top: 180px; background: radial-gradient(circle at 50% 50%, rgba(50, 108, 242, 0.08) 0%, transparent 60%); }
+        .blog-sub { color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto 60px; }
+
+        /* Blog Grid */
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 30px; margin-top: 40px; }
+        .blog-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 32px; padding: 40px; text-decoration: none; transition: 0.5s var(--ease-out-expo); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; height: 400px; }
+        .blog-card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(800px circle at var(--mouseX) var(--mouseY), rgba(50, 108, 242, 0.15) 0%, transparent 40%); opacity: 0; transition: opacity 0.5s; }
+        .blog-card:hover::before { opacity: 1; }
+        .blog-card:hover { transform: translateY(-10px); background: var(--bg-card-hover); border-color: var(--border-glow); }
+        .blog-tag { display: inline-block; padding: 6px 14px; background: rgba(50, 108, 242, 0.1); border: 1px solid rgba(50, 108, 242, 0.2); color: var(--accent-blue); border-radius: 100px; font-size: 0.75rem; font-weight: 700; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .blog-card h3 { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; color: #fff; line-height: 1.3; }
+        .blog-card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 30px; }
+        .read-more { font-weight: 700; color: var(--accent-blue); font-size: 0.9rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .blog-card:hover .read-more { gap: 12px; }
+
+        /* Reveal Animation */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s var(--ease-out-expo); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Footer Sync */
+        footer { padding: 100px 0 50px; border-top: 1px solid var(--border-subtle); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 50px; margin-bottom: 80px; }
+        .footer-col h5 { font-family: var(--font-heading); color: #fff; font-size: 1.1rem; margin-bottom: 25px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; transition: 0.3s; font-size: 0.95rem; }
+        .footer-links a:hover { color: var(--accent-blue); padding-left: 5px; }
+        .footer-bottom { padding-top: 40px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; color: var(--text-dim); font-size: 0.9rem; }
+
+        /* Sticky FAB */
+        .sticky-cta { position: fixed; bottom: 30px; right: 30px; z-index: 2000; }
+        .fab { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--accent-blue); color: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: 0.3s; text-decoration: none; }
+        .fab:hover { transform: scale(1.1) rotate(5deg); }
+        .fab-whatsapp { background: #25D366; }
+
+        .mobile-toggle { display: none; }
+
+        @media (max-width: 768px) {
+            .blog-grid { grid-template-columns: 1fr; }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 85%; height: 100vh; background: #03050a; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.5s; z-index: 999; border-left: 1px solid rgba(255,255,255,0.05); }
+            .nav-links.active { right: 0; }
+            .nav-cta { display: none; }
+            .mobile-toggle { display: flex; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1001; }
+            .mobile-toggle span { width: 28px; height: 2px; background: #fff; border-radius: 2px; transition: 0.3s; }
+            .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+            .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+            .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+            .heading-xl { font-size: 3rem; }
+            .blog-card { height: auto; min-height: 350px; }
+        }
+
+        /* Hide custom cursor on touch devices */
+        @media (hover: none), (pointer: coarse) {
+            #cursor-follower, #cursor-dot { display: none !important; }
+            * { cursor: auto !important; }
+            .blog-card, .btn, a { cursor: pointer !important; }
+        }
+     @media (max-width: 768px) {
+            nav { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: rgba(3, 5, 10, 0.97) !important; }
+            .btn-secondary { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+            .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+            .reveal.active { opacity: 1 !important; transform: none !important; }
+            #cursor-follower, #cursor-dot { display: none !important; }
+        }</style>
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+    <div id="cursor-follower"></div>
+    <div id="cursor-dot"></div>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo">AdClamor<span> Digital</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#services">Arsenal</a></li>
+            <li><a href="index.html#why">Intel</a></li>
+            <li><a href="index.html#process">Protocol</a></li>
+            <li><a href="blog.html" class="active">Dispatch</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="index.html#contact" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;">Initiate Protocol</a>
+        </div>
+        <div class="mobile-toggle" id="mobileToggle">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <section class="blog-hero">
+        <div class="container reveal">
+            <h1 class="heading-xl"><span class="text-gradient">The Dispatch</span></h1>
+            <p class="blog-sub">Elite insights on market dominance, digital architecture, and the psychology of data. Your roadmap to the next level.</p>
+
+            <div class="blog-grid">
+                <!-- Blog 1 -->
+                <a href="blog/seo-cost-india.html" class="blog-card reveal">
+                    <div>
+                        <div class="blog-tag">SEO Mastery</div>
+                        <h3>SEO Services Cost in India: 2026 Roadmap</h3>
+                        <p>A deep dive into pricing models and ROI expectations for businesses targeting technical dominance.</p>
+                    </div>
+                    <div class="read-more">Read more →</div>
+                </a>
+
+                <!-- Blog 2 -->
+                <a href="blog/website-cost-india.html" class="blog-card reveal">
+                    <div>
+                        <div class="blog-tag">Web Architecture</div>
+                        <h3>The True Price of High-Performance Web</h3>
+                        <p>Why cheap sites cost you more, and how to value world-class digital architecture in 2026.</p>
+                    </div>
+                    <div class="read-more">Read more →</div>
+                </a>
+
+                <!-- Blog 3 -->
+                <a href="blog/seo-vs-google-ads.html" class="blog-card reveal">
+                    <div>
+                        <div class="blog-tag">Growth Strategy</div>
+                        <h3>SEO vs Google Ads: The Strategic Split</h3>
+                        <p>Deciding between long-term authority and high-intent immediate traffic generation.</p>
+                    </div>
+                    <div class="read-more">Read more →</div>
+                </a>
+
+                <!-- Blog 4 -->
+                <a href="blog/why-no-leads.html" class="blog-card reveal">
+                    <div>
+                        <div class="blog-tag">Lead Generation</div>
+                        <h3>Why Your Funnels Are Failing</h3>
+                        <p>Identifying the 10 friction points that are killing your conversion rate today.</p>
+                    </div>
+                    <div class="read-more">Read more →</div>
+                </a>
+
+                <!-- Blog 5 -->
+                <a href="blog/digital-marketing-strategy-2026.html" class="blog-card reveal">
+                    <div>
+                        <div class="blog-tag">Digital Strategy</div>
+                        <h3>The 2026 Digital Conquest Manual</h3>
+                        <p>A complete, multi-channel strategy for brands ready to scale beyond the noise.</p>
+                    </div>
+                    <div class="read-more">Read more →</div>
+                </a>
+
+                <!-- Blog 6 -->
+                <a href="blog/future-of-digital-marketing.html" class="blog-card reveal">
+                    <div>
+                        <div class="blog-tag">Insights</div>
+                        <h3>The AI Shift in Tech Hubs</h3>
+                        <p>How the agency landscape is evolving in high-tech markets like Dubai and Mumbai.</p>
+                    </div>
+                    <div class="read-more">Read more →</div>
+                </a>
+
+                <!-- Dynamic blogs from Supabase will be appended here -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid reveal">
+                <div class="footer-col" style="grid-column: span 1.5;">
+                    <a href="index.html" class="logo" style="margin-bottom: 25px; display: block;">AdClamor<span> Digital</span></a>
+                    <p style="color: var(--text-muted); max-width: 350px; font-size: 0.95rem;">
+                        Elite Digital Growth Agency. Building technical dominance and creative souls for the world's most ambitious brands.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h5>Capabilities</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Performance Ads</a></li>
+                        <li><a href="index.html#services">Web Architecture</a></li>
+                        <li><a href="index.html#services">Social Growth</a></li>
+                        <li><a href="index.html#services">Brand Strategy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Agency</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html#why">About Us</a></li>
+                        <li><a href="index.html#process">Our Method</a></li>
+                        <li><a href="blog.html">The Dispatch</a></li>
+                        <li><a href="index.html#contact">Join the Arsenal</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 AdClamor Digital. All Rights Reserved.</p>
+                <p style="font-size: 0.85rem; color: var(--text-dim); letter-spacing: 0.5px;">Developed by <a href="https://www.linkedin.com/in/roshani-bhaskar-9a60232a7/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue); text-decoration: none; font-weight: 600; transition: color 0.3s;" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='var(--accent-blue)'">Roshani Bhaskar</a></p>
+                <div style="display: flex; gap: 30px;">
+                    <a href="#" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: var(--text-dim); text-decoration: none;">Terms of Service</a>
+                    <a href="admin/index.html" style="color: var(--text-dim); text-decoration: none; opacity: 0.4; transition: opacity 0.3s;" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='0.4'">Admin</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <script>
+        // Custom Cursor Logic
+        const follower = document.getElementById('cursor-follower');
+        const dot = document.getElementById('cursor-dot');
+
+        document.addEventListener('mousemove', (e) => {
+            follower.style.left = e.clientX + 'px';
+            follower.style.top = e.clientY + 'px';
+            dot.style.left = e.clientX + 'px';
+            dot.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('a, button, input, select, textarea').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                follower.style.width = '64px';
+                follower.style.height = '64px';
+                follower.style.background = 'rgba(255, 255, 255, 0.05)';
+            });
+            el.addEventListener('mouseleave', () => {
+                follower.style.width = '32px';
+                follower.style.height = '32px';
+                follower.style.background = 'rgba(255, 255, 255, 0.1)';
+            });
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // Intersection Observer for Reveals
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileToggle.classList.toggle('active');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                });
+            });
+        }
+
+        // Bento Card Mouse Interaction (Keep for dynamic elements using event delegation)
+        document.querySelector('.container').addEventListener('mousemove', (e) => {
+            const card = e.target.closest('.blog-card');
+            if (card) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouseX', `${x}px`);
+                card.style.setProperty('--mouseY', `${y}px`);
+            }
+        });
+    </script>
+
+    <!-- Supabase Integration -->
+    <script type="module">
+        import { supabase } from './js/supabase-config.js';
+
+        async function fetchBlogs() {
+            const blogGrid = document.querySelector('.blog-grid');
+            
+            try {
+                // Fetch blogs ordered by newest first
+                const { data: blogs, error } = await supabase
+                    .from('blogs')
+                    .select('*')
+                    .order('created_at', { ascending: false });
+
+                if (error) throw error;
+
+                if (!blogs || blogs.length === 0) return; // No dynamic blogs, static ones remain
+
+                blogs.forEach((blog) => {
+                    // Create card element (text-based, no image required)
+                    const card = document.createElement('a');
+                    card.href = `blog/post.html?id=${blog.id}`;
+                    card.className = "blog-card reveal";
+
+                    card.innerHTML = `
+                        <div>
+                            <div class="blog-tag">Insight</div>
+                            <h3>${blog.title}</h3>
+                            <p>${blog.description}</p>
+                        </div>
+                        <div class="read-more">Read more →</div>
+                    `;
+                    
+                    blogGrid.appendChild(card);
+                });
+
+                // Re-initialize intersection observer for new reveal elements
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            } catch (error) {
+                console.error("Error fetching blogs:", error);
+                // Don't overwrite grid — static blogs still show even if Supabase fails
+            }
+        }
+
+        // Fetch blogs on load
+        fetchBlogs();
+    </script>
+</body>
+</html>
+

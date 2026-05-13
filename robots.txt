@@ -1,0 +1,15 @@
+User-agent: *
+# Allow images in admin folder as they are used on public pages
+Allow: /admin/*.png
+Allow: /admin/*.jpg
+Allow: /admin/*.jpeg
+Allow: /admin/*.gif
+Allow: /admin/*.svg
+Allow: /admin/*.webp
+
+# Disallow admin dashboard and scripts
+Disallow: /admin/index.html
+Disallow: /admin/admin.js
+Disallow: /admin/
+
+Sitemap: https://adclamordigital.com/sitemap.xml
